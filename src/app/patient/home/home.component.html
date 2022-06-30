@@ -1,0 +1,40 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="row">
+                <mat-card class="pd-card">
+                    <mat-card-title class="text-center">Appointments</mat-card-title> 
+                    <mat-card-actions class="text-center">
+                        <button mat-mini-fab color="primary" 
+                             routerLink="/patient/book-appointment">
+                            <mat-icon>add</mat-icon>    
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+
+
+                <mat-card class="pd-card">
+                    <mat-card-title class="text-center">Products</mat-card-title>
+                    <mat-card-actions class="text-center">
+                        <button mat-mini-fab color="primary"
+                            routerLink="/patient/product-book">
+                            <mat-icon>shopping_cart</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>    
+
+
+                <mat-card class="pd-card">
+                    <mat-card-title class="text-center">Tests</mat-card-title>
+                    <mat-card-actions class="text-center">
+                        <button mat-mini-fab color="primary" (click)="newTestRequest()" >
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>    
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

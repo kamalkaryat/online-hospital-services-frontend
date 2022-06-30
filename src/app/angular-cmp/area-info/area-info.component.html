@@ -1,0 +1,89 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <ng-container [formGroup]="form">
+      <div class="row">
+            <!-- State-->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>State</mat-label>
+              <input type="text"
+                    placeholder="e.g. Uttarakhand"
+                    aria-label="State"
+                    matInput
+                    formControlName="stateFC"
+                    [matAutocomplete]="auto"
+                    (ngModelChange)="populateStates()"
+                    #state>
+
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+        </div>
+        
+            <!-- District -->
+        <div class="row">    
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>District</mat-label>
+              <input type="text"
+                    placeholder="e.g. Dehradun"
+                    aria-label="District"
+                    matInput
+                    formControlName="districtFC"
+                    [matAutocomplete]="auto"
+                    (ngModelChange)="populateDistricts()"
+                    #district>
+
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions" [value]="option"
+                    [ngClass]="{'hide-autocomplete': !showAutocomplete}">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+        </div>
+
+      <div class="row">
+            <!-- Pincode -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Pincode</mat-label>
+              <input type="text"
+                    placeholder="e.g. 248007"
+                    aria-label="Pincode"
+                    matInput
+                    formControlName="pincodeFC"
+                    [matAutocomplete]="auto"
+                    (ngModelChange)="populatePincodes()"
+                    #pincode>
+
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <!-- Area -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Area Name</mat-label>
+              <input type="text"
+                    placeholder="e.g Clock Tower"
+                    aria-label="Area"
+                    matInput
+                    formControlName="areaNameFC"
+                    [matAutocomplete]="auto"
+                    (ngModelChange)="populateAreaNames()">
+              
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+        </div>
+      </ng-container>
+  </div>
+</div>

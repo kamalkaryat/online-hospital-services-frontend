@@ -1,0 +1,89 @@
+<h2 style="text-align:center;">Labs</h2>
+<mat-form-field appearance="standard">
+    <mat-label>Search Labs</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex.Abc" #input>
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8 table-bm" >
+
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="labId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.labId}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="labName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.labName | titlecase}} </td>
+      </ng-container>
+
+      <!-- Type Column -->
+      <ng-container matColumnDef="labType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+        <td mat-cell *matCellDef="let row">
+          <div *ngIf= "row.labType === 'GOVERNMENT'" style="color: rgb(160, 211, 232);">
+             {{row.labType}} </div>
+          <div *ngIf= "row.labType === 'PRIVATE'" style="color: rgb(235, 135, 147);">
+             {{row.labType}} </div>
+          <div *ngIf= "row.labType === 'OTHER'" style="color: rgb(235, 232, 135);">
+             {{row.labType}} </div>
+        </td>
+      </ng-container>
+
+      <!-- Hospital Column -->
+      <ng-container matColumnDef="hospital">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Hospital </th>
+          <ng-container *matCellDef="let row">
+            <td mat-cell *ngIf="row.hospital">{{row.hospital.hospitalName | titlecase}}</td>
+            <td mat-cell *ngIf="!row.hospital" style="text-align: center;">__</td>
+          </ng-container>
+      </ng-container>
+
+      <!--Area -->
+      <ng-container matColumnDef="area">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Area </th>
+        <ng-container *matCellDef="let row">
+            <td mat-cell *ngIf="row.area"> {{row.area.areaName | titlecase}} 
+                {{row.area.district | titlecase}} {{row.area.state | titlecase}} 
+                {{row.area.pincode}}
+            </td>
+        </ng-container>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+        <ng-container *matCellDef="let row">
+          <td mat-cell *ngIf="row.status" style="color: green;">Active</td>
+          <td mat-cell *ngIf="!row.status" style="color: red;">Inactive</td>
+      </ng-container>
+      </ng-container>
+
+      <!-- Action -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="warn" *ngIf="row.status" (click)="manageLab(row)">
+              <mat-icon>block</mat-icon>
+            </button>
+
+            <button mat-icon-button color="primary" *ngIf="!row.status" (click)="manageLab(row)">
+              <mat-icon>arrow_circle_right	</mat-icon>
+            </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">Lab not found "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of doctors"></mat-paginator>
+  </div>

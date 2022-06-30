@@ -1,0 +1,37 @@
+<div>
+    <div class="text-center">
+        <h3>Doctor Registration</h3>
+        </div>
+        <form [formGroup]="form">
+        
+        <mat-dialog-content>
+            
+            <app-basic-info formGroupName="basicInfo"></app-basic-info>
+
+            
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Department</mat-label>
+                <input type="text" matInput formControlName="docDeptFC" 
+                    name= "docDept" placeholder="e.g. ORTHO">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Qualification</mat-label>
+                <input type="text" matInput formControlName="docQualificationFC" 
+                    name= "docQualification" placeholder="e.g. MBBS">
+            </mat-form-field>
+
+            <!--Search-Hospital Component-->
+            <app-search-hospital formGroupName="hospitalInfo"></app-search-hospital>
+
+            <!-- Password -->
+            <app-password formGroupName="password"></app-password>
+        </mat-dialog-content>
+
+        <mat-dialog-actions>
+            <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" (click)="onButtonClick()" 
+                [disabled]="!form.valid">Register</button>
+        </mat-dialog-actions>
+    </form>
+</div>

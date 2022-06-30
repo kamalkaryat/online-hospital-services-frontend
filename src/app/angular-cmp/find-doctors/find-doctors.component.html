@@ -1,0 +1,9 @@
+<div class="tab-heading">
+    <button mat-raised-button color="primary" (click)="findDoctors()">Search</button>
+</div>
+<div *ngFor="let doctor of doctors">
+    <mat-card class="card" >
+        <mat-card-title>{{doctor.doctorName | titlecase}}</mat-card-title>
+        <mat-card-subtitle>{{ doctor.doctorDept| uppercase}}</mat-card-subtitle>
+    </mat-card>
+</div>

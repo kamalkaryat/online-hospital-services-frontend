@@ -1,0 +1,12 @@
+
+<div class="tab-heading">
+    <button mat-raised-button color="primary" (click)="findHospitals()">Search</button>
+</div>
+
+<div *ngFor="let hospital of hospitals">
+    <mat-card class="card">
+        <mat-card-title>{{hospital.hospitalName | titlecase}}</mat-card-title>
+        <mat-card-subtitle>{{ hospital.hospitalType }}</mat-card-subtitle>
+    </mat-card>
+</div>
+

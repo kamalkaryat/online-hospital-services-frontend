@@ -1,0 +1,15 @@
+.mat-tab-group {
+    margin-bottom: 48px;
+}
+.container{
+    margin-top: 2%;
+}
+.image_div{
+    width: auto;
+    height: 20%;
+    text-align: center;
+}
+.front-image{
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+}

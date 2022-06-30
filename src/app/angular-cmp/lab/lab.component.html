@@ -1,0 +1,26 @@
+<div>
+    <form [formGroup]="form">
+        
+        <!-- Search-Hospital Component -->
+        <app-search-hospital formGroupName="searchHospital"></app-search-hospital>
+
+        <!-- Lab -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Lab</mat-label>
+            <input type="text"
+                  placeholder="e.g. Dr Reddy's Lab"
+                  aria-label="Lab"
+                  matInput
+                  formControlName="labFC"
+                  [matAutocomplete]="auto"
+                  (ngModelChange)="populateLabs()">
+
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+    </form>
+</div>

@@ -1,0 +1,53 @@
+<div class="bootstrap-wrapper">
+    <div class="image_div">
+        <img class="front-image" src="/assets/images/all_subjects.png" alt="not avialable">
+    </div>
+
+    <div class="container">
+    
+        <!-- Tabs -->
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <mat-tab-group mat-align-tabs="center" animationDuration="500ms">
+                    <!-- Add find-hospitals component -->
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">add_home_work</mat-icon>
+                            Hospitals
+                        </ng-template>                       
+                        <app-find-hospitals></app-find-hospitals>
+                    </mat-tab>
+
+                    <!-- Add find-doctors component-->
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <p class="button-icon">
+                                <img class="icon" src="/assets/icons/male_doc.png" alt="doctors">
+                            </p>
+                            Doctors
+                        </ng-template>
+                        <app-find-doctors></app-find-doctors>
+                    </mat-tab>
+
+                    <!-- Add find-prodcuts component -->
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">biotech</mat-icon>
+                            Labs
+                        </ng-template>
+                        <app-find-labs></app-find-labs>
+                    </mat-tab>
+
+                    <!-- Add find-prodcuts component -->
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">vaccines</mat-icon>
+                            Products
+                        </ng-template>
+                        <app-find-products></app-find-products>
+                    </mat-tab>
+                  </mat-tab-group>                
+            </div>
+        </div>
+    </div>
+</div>

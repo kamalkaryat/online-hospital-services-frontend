@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <ng-container [formGroup]="form">
+        <div class="row">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="usernameFC"
+                    name= "username" placeholder="e.g. abc@gmail.com">
+            </mat-form-field>
+            
+            <!--Name-->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput formControlName="nameFC" 
+                    name= "name" placeholder="e.g. Arun">
+            </mat-form-field>
+
+            <!-- Dob -->
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Select Dob</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dobFC"
+                    name= "dob">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            
+            <!--Gender-->
+            <div class="mb-20">
+                <label>Gender: </label>
+                <mat-radio-group formControlName="genderFC"
+                    name="gender" >
+                  <mat-radio-button class="ml-20" value="Male">Male</mat-radio-button>
+                  <mat-radio-button class="ml-20" value="Female">Female</mat-radio-button>
+                  <mat-radio-button class="ml-20" value="Other">Other</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            
+            <!--Phone No-->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Phone Number</mat-label>
+                <input type="number" matInput formControlName="phoneFC" name= "phone" 
+                    placeholder="e.g. 7212345678">
+            </mat-form-field>
+        </div>
+      </ng-container>
+    </div>
+</div>

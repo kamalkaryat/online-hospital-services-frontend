@@ -1,0 +1,19 @@
+<div>
+    <div class="text-center">Hospital Registration</div>
+        <form [formGroup]="hospitalForm">
+        
+        <mat-dialog-content>
+            
+            <!--BusinessBasicInfo Component-->
+            <app-business-basic-info formGroupName="businessBasicInfo"></app-business-basic-info>
+
+            <!--HospitalInfo Component-->
+            <app-search-hospital formGroupName="hospitalInfo"></app-search-hospital>
+        </mat-dialog-content>
+
+        <mat-dialog-actions>
+            <button mat-raised-button color="warn" mat-dialog-close cdkFocusInitial>Cancel</button>
+            <button mat-raised-button color="primary" (click)="onBtnClick()" [disabled]="!hospitalForm.valid">{{btnName}}</button>
+        </mat-dialog-actions>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+<div class="bootstrap-wrapper">
+
+  <div class="container">
+    <div class="row" class="mt-20">
+      <div class="col-md-6 offset-md-3">
+
+        <mat-card>
+        <h1 class="text-center">Login</h1>
+
+        <form [formGroup]="form" class="login-form">
+
+          <mat-form-field appearance="outline" class="login-full-width">
+            <mat-label>Username</mat-label>
+            <input type="email" matInput formControlName="usernameFC" name="username"
+                    placeholder="abc@gmail.com" required>
+          </mat-form-field><br>
+          
+          <mat-form-field appearance="outline" class="login-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="passwordFC" name="password"
+                    placeholder="Enter Password" required>
+          </mat-form-field>
+
+          <div class="container text-center">
+            <button (click)="login()" mat-raised-button color="primary" [disabled]="!form.valid">
+                Login
+            </button>
+            <a routerLink="/forgotPsw" class="ml-20">Forgot Password?</a>
+          </div>
+        </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

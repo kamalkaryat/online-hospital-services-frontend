@@ -1,0 +1,42 @@
+<div>
+    <div class="text-center">Reschedule Appointment</div>
+    <form [formGroup]="aptForm">
+        {{aptForm.value | json}}
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Hospital</mat-label>
+            <input type="text"
+                   aria-label="Hospital"
+                   matInput
+                   formControlName="hospitalFC">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Booking ID</mat-label>
+            <input type="text" matInput formControlName="bookingIdFC" name= "bookingId">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+              <input formControlName="dateFC" matInput [matDatepicker]="dp3" placeholder="Select Date"
+              required [min]="today">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+              <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+          </mat-form-field>
+        
+        <div class="text-center">
+            <button mat-button color="primary" (click)="findAppointments()">Search</button>
+        </div>
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Time</mat-label>
+            <mat-select formControlName="timeFC" name="time">
+            <mat-option *ngFor="let res of aptRes" 
+                [value]="res.time">{{res.time}}-------------{{res.aptAvl}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-dialog-actions>
+            <button mat-raised-button color="warn" mat-dialog-close cdkFocusInitial>Cancel</button>
+            <button mat-raised-button color="primary" (click)="onBtnClick()" [disabled]="!aptForm.valid">{{btnName}}</button>
+        </mat-dialog-actions>
+    </form>
+</div>

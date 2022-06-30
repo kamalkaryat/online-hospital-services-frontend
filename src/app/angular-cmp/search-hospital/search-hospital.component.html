@@ -1,0 +1,27 @@
+<div>
+    <form [formGroup]="form">
+        
+        <!-- Area-Info -->
+        <app-area-info formGroupName="areaInfo"></app-area-info>
+
+        <!-- Hospital -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Hospital</mat-label>
+            <input type="text"
+                  placeholder="e.g. Doon Hospital"
+                  aria-label="Hospital"
+                  matInput
+                  formControlName="hospitalFC"
+                  [matAutocomplete]="auto"
+                  (ngModelChange)="populateHospitals()"
+                  #district>
+
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+    </form>
+</div>

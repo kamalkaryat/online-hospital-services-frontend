@@ -1,0 +1,41 @@
+<div class="bootstrap-wrapper">
+
+    <div class="container">
+      <div class="row" class="mt-20">
+        <div class="col-md-6 offset-md-3">
+  
+          <mat-card>
+            <form [formGroup]="forgotPswForm">
+              
+              <mat-card-title class="text-center">Forgot Password</mat-card-title>
+              <mat-form-field appearance="outline" class="login-full-width">
+                <mat-label>Username</mat-label>
+                <input type="email" matInput name="username" formControlName="usernameFC"
+                        placeholder="abc@gmail.com" id="username" (keyup)="onKeyPress($event)" >
+              </mat-form-field><br>
+
+              <div class="text-center mb-20">
+                <button mat-raised-button color="primary" [disabled]="btnDisabled" (click)="sendCode()">Send</button>
+              </div>
+
+              <mat-form-field appearance="outline" class="login-full-width">
+                <mat-label>Code</mat-label>
+                <input type="number" matInput name="code"
+                        placeholder="123456" formControlName="codeFC">
+              </mat-form-field><br>
+
+              <app-password formGroupName="password"></app-password>
+
+              <mat-card-actions class="text-center">
+                <button mat-raised-button color="primary" (click)="onSubmit()" 
+                    [disabled]="!forgotPswForm.valid">Submit</button>
+              </mat-card-actions>
+            </form>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+

@@ -1,1 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {font-family: Verdana, Geneva, Tahoma, sans-serif ; }
+
+.text-center{
+    text-align: center;
+}
+.card{
+    margin: 5% auto;
+    width: 450px; ;
+}
+.icon-button{
+    background: none;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+.icon-button .icon{
+    width: 28px;
+    height: 20px;
+}
+.bottom-margin{
+    margin-bottom: 5%;
+}
+.ml-20{
+    margin-left: 20px;
+}
+.mr-20{
+    margin-right: 20px;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.ml-40{
+    margin-left: 40px;
+}
+.mr-40{  
+    margin-right: 40px; 
+}
+.mt-40{
+    margin-top: 40px;
+}
+.mb-40{  
+    margin-bottom: 40px; 
+}
+.profile-outer-card{
+    width: 430px;
+    background-color: azure;
+}
+.profile-inner-card-image{
+    width: 400px;
+    text-align: center;
+    margin-bottom: 2%;
+}
+.profile-inner-card-text{
+    width: 400px;
+}
+
+.pd-card{
+    background-color: rgb(245, 245, 245);
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20%;
+}
+.table-bm{ margin-bottom: 4%; }
+
+.text-center{
+    text-align: center; 
+}
+.tab-heading{
+    margin-top: 2%;
+    text-align: center;
+}
+
+.full-width{
+    width: 100%; 
+}
+.hide-autocomplete { display: none; }
+
+table {
+    width: 100%;
+}
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+  
+td, th {
+    width: 15%;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

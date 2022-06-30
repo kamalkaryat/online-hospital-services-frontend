@@ -1,0 +1,23 @@
+<div>
+    <form [formGroup]="form">
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="typeFC" name="type">
+                <mat-option *ngFor="let t of types" [value]="t">{{t}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Phone</mat-label>
+            <input type="number" matInput formControlName="phoneFC" 
+                name= "phone" placeholder="e.g.9812457821">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="emailFC" 
+                name= "email">
+        </mat-form-field>
+    </form>
+</div>

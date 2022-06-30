@@ -1,0 +1,23 @@
+<div>
+    <div class="text-center">Hospital-Admin Registration</div>
+        <form [formGroup]="hospitalAdminForm">
+        
+        <mat-dialog-content>
+
+            <!--BasicInfo Component-->
+            <app-basic-info formGroupName="basicInfo"></app-basic-info>
+            
+            <!--HospitalInfo Component-->
+            <app-search-hospital formGroupName="hospitalInfo"></app-search-hospital>
+            
+            <!-- Password Component-->
+            <app-password formGroupName="password"></app-password>
+        </mat-dialog-content>
+
+        <mat-dialog-actions>
+            <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" cdkFocusInitial (click)="onBtnClick()" 
+                [disabled]="!hospitalAdminForm.valid">Save</button>
+        </mat-dialog-actions>
+    </form>
+</div>

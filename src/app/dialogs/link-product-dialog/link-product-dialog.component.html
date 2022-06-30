@@ -1,0 +1,70 @@
+<div>
+    <div class="text-center">
+        <h3>Register Product</h3>
+        </div>
+        <form [formGroup]="form">
+        
+        <mat-dialog-content>
+        
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Hospital Id</mat-label>
+                <input type="text" matInput formControlName="hospitalIdFC" 
+                    name= "hospitalId" placeholder="e.g. ab75df4">
+            </mat-form-field>
+
+            <!-- Product Category & Product Name-->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Product Category</mat-label>
+                <input type="text"
+                      placeholder="e.g. Medicine"
+                      aria-label="Category"
+                      matInput
+                      formControlName="productCategoryFC"
+                      [matAutocomplete]="auto"
+                      (ngModelChange)="populateProductCategory()">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                    {{option | titlecase}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Product</mat-label>
+                <input type="text"
+                      placeholder="e.g. Paracetamol"
+                      aria-label="Product"
+                      matInput
+                      formControlName="productFC"
+                      [matAutocomplete]="auto"
+                      (ngModelChange)="populateProducts()">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                    {{option | titlecase}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Cost</mat-label>
+                <input type="number" matInput formControlName="productCostFC" 
+                    name= "productCost" placeholder="e.g. 1000">
+                <mat-hint>Enter Cost Per Item</mat-hint>
+            </mat-form-field>
+
+            <br>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Quantity</mat-label>
+                <input type="number" matInput formControlName="productQuantityFC" 
+                    name= "productQuantity" placeholder="e.g. 10">
+            </mat-form-field>
+
+        </mat-dialog-content>
+
+        <mat-dialog-actions>
+            <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" (click)="linkProduct()" 
+                [disabled]="!form.valid">Register</button>
+        </mat-dialog-actions>
+    </form>
+</div>

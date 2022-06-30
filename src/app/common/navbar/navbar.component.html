@@ -1,0 +1,38 @@
+<mat-toolbar color="accent">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+     <mat-icon>menu</mat-icon>
+   </button>
+   <span>Online-Hospital-Services</span>
+   <span class="homenav-spacer"></span>
+
+   <a 
+        *ngIf="!authService.isUserLoggedIn()"
+        [routerLink]="'/login'" 
+        mat-icon-button class="login-icon favorite-icon" 
+        aria-label="Login"
+        style="font-size: 13pt;">
+     Login
+   </a>
+   <span style="margin-left: 2%;"></span>
+   <a 
+        *ngIf="!authService.isUserLoggedIn()"
+        [routerLink]="'/signup'"
+        mat-icon-button class="signup-icon ml-20 mr-20"
+        style="font-size: 13pt;">
+        Signup
+   </a>
+
+   <button mat-icon-button *ngIf="authService.isUserLoggedIn()" (click)="home()">
+      <mat-icon>home</mat-icon>
+   </button>
+
+   <a
+      *ngIf="authService.isUserLoggedIn()"
+      (click)="logout()"
+      mat-icon-button 
+      class="signup-icon ml-20 mr-20"
+      aria-label="Logout"> 
+      Logout
+   </a>
+   
+</mat-toolbar>

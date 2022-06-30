@@ -1,0 +1,56 @@
+<div>
+    <div class="text-center">Update Tets Status</div>
+    
+    <form [formGroup]="form">
+        <mat-dialog-content>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Order ID</mat-label>
+            <input type="text" matInput formControlName="orderIdFC" 
+                name= "orderId">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Patient ID</mat-label>
+            <input type="text" matInput formControlName="patientIdFC" 
+                name= "patientID">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Test</mat-label>
+            <input type="text" matInput formControlName="productFC" 
+                name= "product" placeholder="e.g. Blood Test">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Test ID</mat-label>
+            <input type="text" matInput formControlName="productIdFC" 
+                name= "productId" placeholder="e.g. Universal Donor">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Date</mat-label>
+            <input type="text" matInput formControlName="dateFC" 
+                name= "productId" placeholder="e.g. Universal Donor">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="statusFC" name="status">
+              <mat-option *ngFor="let status of statusList" 
+                [value]="status">{{status}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Lab ID</mat-label>
+            <input type="text" matInput formControlName="labIdFC" 
+                name= "labId" placeholder="e.g. akdf7874df">
+        </mat-form-field>
+
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button mat-raised-button mat-dialog-close color="warn" cdkFocusInitial>Cancel</button>
+            <button mat-raised-button color="primary" (click)="onBtnClick()" [disabled]="!form.valid">Update</button>
+        </mat-dialog-actions>
+    </form>
+</div>

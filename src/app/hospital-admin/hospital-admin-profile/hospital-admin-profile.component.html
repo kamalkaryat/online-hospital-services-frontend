@@ -1,0 +1,119 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <mat-card class="profile-card">
+            <form [formGroup]="haUpdateForm" (ngSubmit)="onUpdate()">
+                
+                <div class="row">
+                <div class="col-md-4">
+                    <br><label>ID</label>
+                </div>
+
+                <div class="col-md-5">
+                <mat-form-field appearance="outline">
+                    <input type="text" matInput formControlName="id" 
+                            name= "id" readonly>
+                </mat-form-field>
+                </div>
+                </div>
+
+                <div class="row">
+
+                <div class="col-md-4">
+                    <br><label>Name</label>
+                </div>
+
+                <div class="col-md-5">
+                <mat-form-field appearance="outline">
+                    <input type="text" matInput formControlName="name" 
+                            name= "name" placeholder="e.g. Rohan">
+                </mat-form-field>
+                </div>
+                
+                </div>
+
+                <div class="row">
+                
+                <div class="col-md-4">
+                    <br>DOB
+                </div>
+
+                <div class="col-md-5">
+                <mat-form-field appearance="outline">
+                    <input type="date" matInput formControlName="dob" 
+                            name= "dob" placeholder="e.g 20-02-2000">
+                </mat-form-field>
+                </div>
+
+                </div>
+
+                
+                <div class="row">
+
+                <div class="col-md-4">
+                    <br>Gender
+                </div>
+
+                <div class="col-md-7">
+                    <br>
+                    <mat-radio-group formControlName="gender" name="gender" color="primary">
+                        <mat-radio-button  value="Male">Male</mat-radio-button>
+                        <mat-radio-button class="ml-20" value="Female">Female</mat-radio-button>
+                        <mat-radio-button class="ml-20" value="Other">Other</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                </div><br>
+
+                <div class="row">
+
+                <div class="col-md-4">
+                    <br>Phone No
+                </div>
+
+                <div class="col-md-5">
+                <mat-form-field appearance="outline">
+                    <input type="number" matInput formControlName="phoneNo" 
+                            name= "name" placeholder="e.g. 8012457821">
+                </mat-form-field>
+                </div>
+
+                </div>
+
+                <div class="row">
+
+                <div class="col-md-4">
+                    <br>Username
+                </div>
+
+                <div class="col-md-5">
+                <mat-form-field appearance="outline">
+                    <input type="email" matInput formControlName="username" 
+                            name= "username" readonly>
+                </mat-form-field>
+                </div>
+
+                </div>
+
+                <div class="row">
+
+                <div class="col-md-4">
+                    <br>Hospital
+                </div>
+
+                <div class="col-md-5">
+                <mat-form-field appearance="outline">
+                    <input type="text" matInput formControlName="hospital" 
+                            name= "hospital" placeholder="e.g. AIIMS Delhi" readonly>
+                </mat-form-field>
+                </div>
+
+                </div>
+                <div>
+                    <button type="submit" [disabled]="!haUpdateForm.valid" 
+                        mat-raised-button color="primary" class="text-center">Update
+                    </button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

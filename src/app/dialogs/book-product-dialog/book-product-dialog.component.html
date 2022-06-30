@@ -1,0 +1,46 @@
+<div>
+    <h2>Book Product</h2>
+</div>
+<mat-dialog-content>
+    <form [formGroup]="bookProductForm">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Id</mat-label>
+            <input type="text" matInput formControlName="id" 
+                name= "productName" readonly>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="name" 
+                name= "name" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Category</mat-label>
+            <input type="text" matInput formControlName="category" 
+                name= "category" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Hospital</mat-label>
+            <input type="text" matInput formControlName="hospital" 
+                name= "hospital" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Cost</mat-label>
+            <input type="number" matInput formControlName="cost" 
+                name= "cost"  readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Quantity</mat-label>
+            <input type="number" matInput formControlName="quantity" 
+                name= "quantity" placeholder="e.g. 2 Units">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<div mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close cdkFocusInitial>Cancel</button>
+    <button mat-raised-button (click)="onBook()" [disabled]="!bookProductForm.valid">Book</button>
+</div>

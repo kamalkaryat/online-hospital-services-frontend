@@ -1,0 +1,30 @@
+
+<div>
+    <h2>Test Request</h2>
+</div>
+<mat-dialog-content>
+    <form [formGroup]="form">
+        <!-- Test -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Test</mat-label>
+            <input type="text" matInput formControlName="testFC" 
+                name= "test" placeholder="e.g. Blood Test">
+        </mat-form-field>
+
+        <!-- Date-->
+        <mat-form-field appearance="fill" class="full-width">
+            <input formControlName="testDateFC" matInput [matDatepicker]="dp3"  
+            placeholder="Select Date" [min]="today">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+      </mat-form-field>
+
+      <app-lab formGroupName="lab"></app-lab>
+
+    </form>
+</mat-dialog-content>
+<div mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close cdkFocusInitial>Cancel</button>
+    <button mat-raised-button color= "primary" (click)="onSubmit()" [disabled]="!form.valid">Book</button>
+</div>

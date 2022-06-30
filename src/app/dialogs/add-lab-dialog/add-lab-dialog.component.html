@@ -1,0 +1,23 @@
+<div>
+    <div class="text-center">Lab Registration</div>
+        <form [formGroup]="labForm">
+        
+        <mat-dialog-content>
+            <!--Search-Hospital Component-->
+            <app-search-hospital formGroupName="searchHospital"></app-search-hospital>
+            
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput formControlName="labNameFC" 
+                    name= "name" placeholder="e.g. Pathology Lab">
+            </mat-form-field>
+
+        </mat-dialog-content>
+
+        <mat-dialog-actions>
+            <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" cdkFocusInitial (click)="onBtnClick()" 
+                [disabled]="!labForm.valid">{{btnName}}</button>
+        </mat-dialog-actions>
+    </form>
+</div>
