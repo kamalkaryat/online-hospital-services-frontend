@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body {font-family: Verdana, Geneva, Tahoma, sans-serif ; }
+html, body { 
+    height: 100%;
+    margin: 0% 0% 0% 0%;
+}
+body {
+    background-color: whitesmoke;
+}
 
 .text-center{
     text-align: center;

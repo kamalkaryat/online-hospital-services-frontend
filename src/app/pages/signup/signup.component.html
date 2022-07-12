@@ -1,9 +1,9 @@
 <div class="bootstrap-wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-md-5 offset-md-3">
+            <div class="col-md-8 offset-md-2">
 
-                <mat-card class="card-width">
+                <mat-card class="card-margin">
 
                 <mat-card-title class="text-center">Signup</mat-card-title>
                 
@@ -21,7 +21,8 @@
                     <mat-card-actions class="text-center">
                         <button type="submit" mat-button mat-raised-button 
                              color="primary" [disabled]="!signupForm.valid">Signup</button>
-                        <button type="reset" mat-button mat-button color="warn" class="ml-20">Clear</button>
+                        <button type="reset" mat-raised-button mat-button color="warn" class="ml-20">Clear</button>
+                        <button routerLink="/" mat-button>Back</button>
                     </mat-card-actions>
                 </form>
                 </mat-card>

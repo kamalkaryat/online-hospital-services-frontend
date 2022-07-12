@@ -105,6 +105,7 @@ import { ProductStockComponent } from './hospital-admin/product-stock/product-st
 import { StockUpdateDialogComponent } from './hospital-admin/stock-update-dialog/stock-update-dialog.component';
 import { TestStatusUpdateDialogComponent } from './hospital-admin/test-status-update-dialog/test-status-update-dialog.component';
 import { HaDoctorsInfoComponent } from './hospital-admin/ha-doctors-info/ha-doctors-info.component';
+import { FooterComponent } from './common/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -174,7 +175,8 @@ import { HaDoctorsInfoComponent } from './hospital-admin/ha-doctors-info/ha-doct
     ProductStockComponent,
     StockUpdateDialogComponent,
     TestStatusUpdateDialogComponent,
-    HaDoctorsInfoComponent
+    HaDoctorsInfoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

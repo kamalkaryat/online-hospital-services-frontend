@@ -1,8 +1,53 @@
-<div class="bootstrap-wrapper">
-    <div class="image_div">
+    <!-- <div class="image_div">
         <img class="front-image" src="/assets/images/all_subjects.png" alt="not avialable">
-    </div>
+    </div> -->
+    <div class="slideshow-container" style="background-color: rgb(172, 224, 233);">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 5</div>
+          <img src="/assets/images/doctor_injection.jpg" style="width:100%">
+          <div class="text">User can easily request for home sample collection</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 5</div>
+          <img src="/assets/images/doctor.jpg" style="width:100%">
+          <div class="text">You can easily find doctors</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 5</div>
+          <img src="/assets/images/hospital2.jpg" style="width:100%">
+          <div class="text">You can easily find hospials</div>
+        </div>
+      
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 5</div>
+            <img src="/assets/images/medicine.jpg" style="width:100%">
+            <div class="text">You can easily find different products like injections, medicines, blood, etc</div>
+        </div>
 
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="/assets/images/lab_1.jpg" style="width:100%">
+            <div class="text">You can easily find labs</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+        <a class="next" (click)="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" (click)="currentSlide(1)"></span>
+        <span class="dot" (click)="currentSlide(2)"></span>
+        <span class="dot" (click)="currentSlide(3)"></span>
+        <span class="dot" (click)="currentSlide(4)"></span>
+        <span class="dot" (click)="currentSlide(5)"></span>
+      </div>
+    <div class="bootstrap-wrapper">
     <div class="container">
     
         <!-- Tabs -->
