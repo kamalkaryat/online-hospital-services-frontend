@@ -1,10 +1,10 @@
 <div class="bootstrap-wrapper">
 
     <div class="container">
-      <div class="row" class="mt-20">
+      <div class="row">
         <div class="col-md-6 offset-md-3">
   
-          <mat-card>
+          <mat-card style="margin-bottom: 5%;margin-top: 5%;">
             <form [formGroup]="forgotPswForm">
               
               <mat-card-title class="text-center">Forgot Password</mat-card-title>
@@ -29,6 +29,9 @@
               <mat-card-actions class="text-center">
                 <button mat-raised-button color="primary" (click)="onSubmit()" 
                     [disabled]="!forgotPswForm.valid">Submit</button>
+                <button routerLink="/login" mat-button>
+                      Back
+                </button>
               </mat-card-actions>
             </form>
           </mat-card>

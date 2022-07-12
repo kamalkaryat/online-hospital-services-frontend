@@ -25,7 +25,11 @@
             <button (click)="login()" mat-raised-button color="primary" [disabled]="!form.valid">
                 Login
             </button>
-            <a routerLink="/forgotPsw" class="ml-20">Forgot Password?</a>
+            <button routerLink="/" mat-button style="margin-left: 2%;">
+              Back
+            </button>
+            <br>
+            <a routerLink="/forgotPsw">Forgot Password?</a>
           </div>
         </form>
         </mat-card>
